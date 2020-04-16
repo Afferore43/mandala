@@ -37,15 +37,28 @@ function draw() {
 }
 
 function mouseReleased() {
+  stopDrawing();
+  return true;
+}
+
+
+function mousePressed() {
+  if(event.toElement) startDrawing(event.toElement);
+  else if(event.target) startDrawing(event.target);
+}
+
+function stopDrawing() {
   drawing = false;
 }
 
-function mousePressed() {
-  if(event.toElement == cnv.elt) {
+function startDrawing(target) {
+  if(target == cnv.elt) {
     drawing = true;
     mandala.newShape();
   }
 }
+
+
 function keyPressed() {
   switch(event.key) {
     case "s":
