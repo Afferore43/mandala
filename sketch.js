@@ -17,7 +17,7 @@ function setup() {
   
   let brush = gui.addFolder("brush");
   
-  brush.add(mandala, 'subdivisions').min(1).max(32).step(1);
+  brush.add(mandala, 'subdivisions').min(1).max(64).step(1);
   brush.add(mandala, 'mirror');
   brush.add(mandala, 'strokeSize').min(0.1).max(200).step(0.1);
   brush.addColor(mandala, 'color');
